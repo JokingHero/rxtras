@@ -21,4 +21,3 @@ Extract substrings in a character vector counting from right.
 substrRight("ABCD", 2)
 #CD
 }
-

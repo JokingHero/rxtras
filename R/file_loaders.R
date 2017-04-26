@@ -22,3 +22,21 @@ loadWigs <- function(filename, filepath){
   }
   import.wig(paste(filepath, filename, sep="/"))
 }
+
+
+#' @title Copy an object in the clipboard
+#'
+#' @description Copy an object in the clipboard
+#'
+#' @param sep The object to copy.
+#' @param sep A character to be used as separator for each column of the object
+#' @param row.names  Copy row names (default is FALSE)
+#' @param col.names Copy column names (default is TRUE)
+#' @return copy the object as character in the clipboard
+#' @author freecube source:http://stackoverflow.com/questions/10959521/how-to-write-to-clipboard-on-ubuntu-linux-in-r
+
+clipboard <- function(x, sep="\t", row.names=FALSE, col.names=TRUE){
+  con <- pipe("xclip -selection clipboard -i", open="w")
+  write.table(x, con, sep=sep, row.names=row.names, col.names=col.names)
+  close(con)
+}

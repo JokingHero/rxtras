@@ -28,4 +28,3 @@ Loads wig files.
 #FLOSSlengths <- sapply(forward, function(x) as.numeric(gsub("[^0-9]", "", x)), USE.NAMES = F) #lengths of footprints from names of files
 #forwardFP <- lapply(forward, loadWigs, filepath = fpath)
 }
-

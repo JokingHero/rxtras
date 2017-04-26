@@ -30,4 +30,3 @@ Plot genomic ranges from the IRanges object or GRanges object.
 library(IRanges)
 plotRanges(IRanges(1:10, width=10:1, names=letters[1:10]))
 }
-
