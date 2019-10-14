@@ -13,6 +13,10 @@ LazyData: TRUE
 BugReports: https://github.com/JokingHero/rxtras/issues
 URL: https://github.com/JokingHero/rxtras
 RoxygenNote: 6.0.1
+Imports: htmltools,
+    miniUI,
+    rstudioapi,
+    shiny
 Suggests: knitr,
     rmarkdown,
     testthat,
