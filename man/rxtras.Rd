@@ -6,5 +6,13 @@
 \alias{rxtras-package}
 \title{rxtras package}
 \description{
-Extra functions and addins that you might find usefull.
+Extra functions and addins that you might find useful.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/JokingHero/rxtras}
+  \item Report bugs at \url{https://github.com/JokingHero/rxtras/issues}
+}
+
 }

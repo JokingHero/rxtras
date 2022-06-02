@@ -18,13 +18,14 @@ plotRanges <- function(x, xlim = x, main = deparse(substitute(x)),  col = "black
          call. = FALSE)
   }
   height <- 1
-  if (is(xlim, "Ranges"))
-      xlim <- c(min(start(xlim)), max(end(xlim)))
-  bins <- disjointBins(IRanges(start(x), end(x) + 1))
-  plot.new()
-  plot.window(xlim, c(0, max(bins) * (height + sep)))
+  if (methods::is(xlim, "Ranges")) {
+    xlim <- c(min(IRanges::start(xlim)), max(IRanges::end(xlim)))
+  }
+  bins <- IRanges::disjointBins(IRanges::IRanges(IRanges::start(x), IRanges::end(x) + 1))
+  graphics::plot.new()
+  graphics::plot.window(xlim, c(0, max(bins) * (height + sep)))
   ybottom <- bins * (sep + height) - height
-  rect(start(x) - 0.5, ybottom, end(x) + 0.5, ybottom + height, col = col, ...)
-  title(main)
-  axis(1)
+  graphics::rect(IRanges::start(x) - 0.5, ybottom, IRanges::end(x) + 0.5, ybottom + height, col = col, ...)
+  graphics::title(main)
+  graphics::axis(1)
 }

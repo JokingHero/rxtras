@@ -4,8 +4,14 @@
 \alias{plotRanges}
 \title{Plot genomic ranges from the IRanges object or GRanges object.}
 \usage{
-plotRanges(x, xlim = x, main = deparse(substitute(x)), col = "black",
-  sep = 0.5, ...)
+plotRanges(
+  x,
+  xlim = x,
+  main = deparse(substitute(x)),
+  col = "black",
+  sep = 0.5,
+  ...
+)
 }
 \arguments{
 \item{x}{a IRanges object.}
