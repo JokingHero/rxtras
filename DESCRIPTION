@@ -19,10 +19,7 @@ Depends:
     methods,
     ggplot2
 Imports: 
-    htmltools,
-    miniUI,
-    rstudioapi,
-    shiny
+    htmltools
 Suggests: knitr,
     rmarkdown,
     testthat,

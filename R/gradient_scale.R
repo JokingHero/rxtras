@@ -38,7 +38,6 @@ scale_gradient <- function(
                       na.value = na.value)
 }
 
-
 # library(rxtras)
 # dt <- iris
 # ggplot(dt, aes(x = Sepal.Length,

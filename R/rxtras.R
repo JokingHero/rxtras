@@ -4,7 +4,7 @@
 #'
 #' @name rxtras
 #' @docType package
-#' @import methods shiny miniUI rstudioapi ggplot2
+#' @import methods ggplot2
 #'
 "_PACKAGE"
 .onAttach <- function(libname, pkgname) {
