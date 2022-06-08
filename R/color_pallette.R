@@ -20,7 +20,7 @@ resurrect <- resurrect[ressurect_order]
 pastel <- c("#666666", "#ffb17b", "#a4e4ff", "#c0ffa4", "#ffe8a3",
             "#ffa6d5", "#ff7e7e", "#aea1ff", "#6dbaff", "#d09b83")
 bw <- c("#181425", "#ffffff")
-color_scheme <- list(bw, pastel, resurrect)
+color_scheme <- list(pastel, resurrect)
 
 
 # library(rxtras)
