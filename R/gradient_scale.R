@@ -6,6 +6,9 @@
 #' if min < 0, use 3 colours and set limits to -max_val, +max_val
 #' else use 2 colours and set limits to 0, max
 #'
+#' Alternative dark red-blue: c("#750e13", "#ffffff", "#003a6d")
+#' Alternative violet-green: c("#491d8b", "#ffffff", "#004144")
+#'
 #' @param min Minimal value in the data
 #' @param max Maximal value in the data
 #' @param aesthetics "colour" or "fill" or both
@@ -44,4 +47,4 @@ scale_gradient <- function(
 #                y = Sepal.Width,
 #                color = Petal.Width)) +
 #   geom_point(size = 5) +
-#   scale_gradient(-3, max(dt$Petal.Width), aesthetics = "color")
+#   scale_gradient(-3, max(dt$Petal.Width), aesthetics = "color", gradient = c("#491d8b", "#ffffff", "#004144"))

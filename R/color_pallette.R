@@ -19,12 +19,19 @@ resurrect <- resurrect[ressurect_order]
 
 pastel <- c("#666666", "#ffb17b", "#a4e4ff", "#c0ffa4", "#ffe8a3",
             "#ffa6d5", "#ff7e7e", "#aea1ff", "#6dbaff", "#d09b83")
-bw <- c("#181425", "#ffffff")
-color_scheme <- list(pastel, resurrect)
+
+#https://davidmathlogic.com/colorblind
+# /#%23585858-%23FE6100-%23648FFF-%2323CC90-%23DC267F-%233844D4-%23FFB000-%23785EF0-%23FFE21C-%2341DDE6
+adj_colorblind_mine <- c("#585858", "#FE6100", "#648FFF", "#23CC90", "#DC267F", "#3844D4", "#FFB000",
+                         "#785EF0", "#FFE21C", "#41DDE6")
+color_scheme <- list(adj_colorblind_mine, resurrect)
 
 
-# library(rxtras)
-# n <- 11
+
+# library(ggplot2)
+# options(ggplot2.discrete.fill = color_scheme)
+# options(ggplot2.discrete.color = color_scheme)
+# n <- 12
 # dt <- iris
 # dt$letter <- LETTERS[sample(n, size = dim(dt)[1], replace = T)]
 # ggplot(dt, aes(y = Sepal.Length, x = letter, fill = letter)) +

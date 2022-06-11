@@ -30,4 +30,7 @@ a scale_fill_gradient
 Depending on min and max will apply gradient to the plot
 if min < 0, use 3 colours and set limits to -max_val, +max_val
 else use 2 colours and set limits to 0, max
+
+Alternative dark red-blue: c("#750e13", "#ffffff", "#003a6d")
+Alternative violet-green: c("#491d8b", "#ffffff", "#004144")
 }
