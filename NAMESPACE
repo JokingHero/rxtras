@@ -2,6 +2,7 @@
 
 export(clipboard)
 export(cpaste)
+export(ggplot2_settings_on)
 export(plotRanges)
 export(scale_gradient)
 export(substrRight)
