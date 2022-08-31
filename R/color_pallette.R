@@ -27,7 +27,6 @@ adj_colorblind_mine <- c("#585858", "#FE6100", "#648FFF", "#23CC90", "#DC267F", 
 color_scheme <- list(adj_colorblind_mine, resurrect)
 
 
-
 # library(ggplot2)
 # options(ggplot2.discrete.fill = color_scheme)
 # options(ggplot2.discrete.color = color_scheme)
@@ -35,7 +34,8 @@ color_scheme <- list(adj_colorblind_mine, resurrect)
 # dt <- iris
 # dt$letter <- LETTERS[sample(n, size = dim(dt)[1], replace = T)]
 # ggplot(dt, aes(y = Sepal.Length, x = letter, fill = letter)) +
-#   geom_boxplot()
+#   geom_boxplot() +
+#   theme_science()
 #
 # ggplot(dt, aes(x = Sepal.Length, fill = letter)) +
 #   geom_density(alpha = 0.6)

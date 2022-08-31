@@ -20,4 +20,5 @@ Extract substrings in a character vector counting from right.
 \examples{
 substrRight("ABCD", 2)
 #CD
+
 }

@@ -29,3 +29,18 @@ plotRanges <- function(x, xlim = x, main = deparse(substitute(x)),  col = "black
   graphics::title(main)
   graphics::axis(1)
 }
+
+
+#' Wrapper around gglplot2::ggsave with presets.
+#'
+#' @inheritParams ggplot2::ggsave
+#' @return A plot saved as .png and .pdf, returns nothing.
+#' @export
+#'
+as.pngpdf <- function(filename, plot = ggplot2::last_plot(), scale = 1,
+                      width = 12, height = 8, units = "in", dpi = 400){
+  ggsave(paste0(filename, ".png"), plot = plot, scale = scale, width = width,
+         height = height, units = units, dpi = dpi)
+  ggsave(paste0(filename, ".pdf"), plot = plot, scale = scale, width = width,
+         height = height, units = units, dpi = dpi)
+}

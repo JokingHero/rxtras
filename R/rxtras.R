@@ -21,5 +21,6 @@ ggplot2_settings_on <- function() {
   theme_set(theme_science())
   options(ggplot2.discrete.fill = color_scheme)
   options(ggplot2.discrete.color = color_scheme)
+  options(ggplot2.discrete.colour = color_scheme)
   return(invisible())
 }
