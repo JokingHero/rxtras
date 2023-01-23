@@ -11,7 +11,7 @@
 #'
 theme_science <- function(base_size = 16) {
   base_family = "sans"
-  nomargin = TRUE
+  nomargin = FALSE
   ff = NULL
   fc = "black"
   fs = NULL
