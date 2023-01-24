@@ -5,32 +5,42 @@
 #' resurrect palette. Theme is based on `ggthemes::theme_pander()`.
 #'
 #' @param base_size Font size
+#' @param base_family Font family
+#' @param nomargin If true will remove all margins.
+#' @param ff text colour, default is black
+#' @param gM grid Major
+#' @param gm grid minor
+#' @param gc grid color
+#' @param gl grid linetype
+#' @param bc background color, default white
+#' @param pc panel colour background, default transparent
+#' @param lp legend position, default is top
 #' @return a ggplot2 theme
 #' @author See ggtheme package
 #' @export
 #'
-theme_science <- function(base_size = 16) {
-  base_family = "sans"
-  nomargin = FALSE
-  ff = NULL
-  fc = "black"
-  fs = NULL
-  gM = TRUE
-  gm = TRUE
-  gc = "grey"
-  gl = "dashed"
-  boxes = TRUE
-  bc = "white"
-  pc = "transparent"
-  lp = "top"
-  axis = 1
+theme_science <- function(
+    base_size = 16,
+    base_family = "sans",
+    nomargin = FALSE,
+    fc = "black",
+    gM = TRUE,
+    gm = TRUE,
+    gc = "grey",
+    gl = "dashed",
+    boxes = TRUE,
+    bc = "white",
+    pc = "transparent",
+    lp = "top",
+    axis = 1) {
 
   tc <- ifelse(pc == "transparent", bc, pc)  # 'transparent' color
 
   res <- theme(text = element_text(family = base_family),
                plot.background = element_rect(fill = bc, colour = NA),
                panel.grid = element_line(colour = gc,
-                                         size = 0.2, linetype = gl),
+                                         size = 0.2,
+                                         linetype = gl),
                panel.grid.minor = element_line(size = 0.1),
                axis.ticks = element_line(colour = gc,
                                          size = 0.7),
@@ -38,8 +48,10 @@ theme_science <- function(base_size = 16) {
                                          face = "bold",
                                          size = base_size * 1.2),
                axis.text = element_text(colour = fc,
-                                        face = "plain", size = base_size * 0.8),
-               legend.text = element_text(colour = fc, face = "plain",
+                                        face = "plain",
+                                        size = base_size * 0.8),
+               legend.text = element_text(colour = fc,
+                                          face = "plain",
                                           size = base_size * 0.8),
                legend.title = element_text(colour = fc,
                                            face = "italic",
@@ -64,15 +76,13 @@ theme_science <- function(base_size = 16) {
                                                fill = "transparent"),
                panel.border = element_rect(fill = NA, colour = gc),
                panel.background = element_rect(fill = pc, colour = gc),
-
                legend.position = lp)
 
   ## disable box(es) around the plot
-  if (!isTRUE(boxes)) {
+  if (!boxes) {
     res <- res + theme(legend.key = element_rect(colour = "transparent",
                                                  fill = "transparent"),
                        strip.background = element_rect(colour = "transparent",
-
                                                        fill = "transparent"),
                        panel.border = element_rect(fill = NA,
                                                    colour = tc),
@@ -81,36 +91,42 @@ theme_science <- function(base_size = 16) {
   }
 
   ## disable grid
-  if (!isTRUE(gM)) {
+  if (!gM) {
     res <- res + theme(panel.grid = element_blank(),
                        panel.grid.major = element_blank(),
                        panel.grid.minor = element_blank())
   }
   ## disable minor grid
-  if (!isTRUE(gm))
+  if (!gm) {
     res <- res + theme(panel.grid.minor = element_blank())
+  }
 
   ## margin
-  if (nomargin)
+  if (nomargin) {
     res <- res + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0), "lines"))
+  }
 
   ## axis angle (TODO: DRY with ifelse in the default color etc. section)
-  if (axis == 0)
+  if (axis == 0) {
     res <- res + theme(axis.text.y = element_text(colour = fc,
                                                   family = base_family,
                                                   face = "plain",
                                                   size = base_size *  0.8,
                                                   angle = 90))
+  }
 
-  if (axis == 2)
+
+  if (axis == 2) {
     res <- res + theme(axis.text.x = element_text(colour = fc,
                                                   family = base_family,
                                                   face = "plain",
                                                   size = base_size *  0.8,
                                                   angle = 90,
                                                   hjust = 1))
+  }
 
-  if (axis == 3)
+
+  if (axis == 3) {
     res <- res + theme(axis.text.y = element_text(colour = fc,
                                                   family = base_family,
                                                   face = "plain",
@@ -122,6 +138,8 @@ theme_science <- function(base_size = 16) {
                                                   size = base_size * 0.8,
                                                   angle = 90,
                                                   hjust = 1))
+  }
+
 
 
 

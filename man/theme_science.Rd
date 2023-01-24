@@ -4,10 +4,44 @@
 \alias{theme_science}
 \title{Set theme for ggplot2}
 \usage{
-theme_science(base_size = 16)
+theme_science(
+  base_size = 16,
+  base_family = "sans",
+  nomargin = FALSE,
+  fc = "black",
+  gM = TRUE,
+  gm = TRUE,
+  gc = "grey",
+  gl = "dashed",
+  boxes = TRUE,
+  bc = "white",
+  pc = "transparent",
+  lp = "top",
+  axis = 1
+)
 }
 \arguments{
 \item{base_size}{Font size}
+
+\item{base_family}{Font family}
+
+\item{nomargin}{If true will remove all margins.}
+
+\item{gM}{grid Major}
+
+\item{gm}{grid minor}
+
+\item{gc}{grid color}
+
+\item{gl}{grid linetype}
+
+\item{bc}{background color, default white}
+
+\item{pc}{panel colour background, default transparent}
+
+\item{lp}{legend position, default is top}
+
+\item{ff}{text colour, default is black}
 }
 \value{
 a ggplot2 theme
