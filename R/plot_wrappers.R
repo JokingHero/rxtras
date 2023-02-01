@@ -42,5 +42,6 @@ as.pngpdf <- function(filename, plot = ggplot2::last_plot(), scale = 1,
   ggsave(paste0(filename, ".png"), plot = plot, scale = scale, width = width,
          height = height, units = units, dpi = dpi, limitsize = FALSE)
   ggsave(paste0(filename, ".pdf"), plot = plot, scale = scale, width = width,
-         height = height, units = units, dpi = dpi, limitsize = FALSE)
+         height = height, units = units, dpi = dpi, limitsize = FALSE,
+         device = grDevices::cairo_pdf)
 }
