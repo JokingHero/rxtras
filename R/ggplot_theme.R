@@ -7,14 +7,16 @@
 #' @param base_size Font size
 #' @param base_family Font family
 #' @param nomargin If true will remove all margins.
-#' @param ff text colour, default is black
+#' @param fc text colour, default is black
 #' @param gM grid Major
 #' @param gm grid minor
 #' @param gc grid color
 #' @param gl grid linetype
+#' @param boxes whether to keep boxes around the plot
 #' @param bc background color, default white
 #' @param pc panel colour background, default transparent
 #' @param lp legend position, default is top
+#' @param axis 0, 1, 2, 3 - default is 1
 #' @return a ggplot2 theme
 #' @author See ggtheme package
 #' @export

@@ -27,6 +27,8 @@ theme_science(
 
 \item{nomargin}{If true will remove all margins.}
 
+\item{fc}{text colour, default is black}
+
 \item{gM}{grid Major}
 
 \item{gm}{grid minor}
@@ -35,13 +37,15 @@ theme_science(
 
 \item{gl}{grid linetype}
 
+\item{boxes}{whether to keep boxes around the plot}
+
 \item{bc}{background color, default white}
 
 \item{pc}{panel colour background, default transparent}
 
 \item{lp}{legend position, default is top}
 
-\item{ff}{text colour, default is black}
+\item{axis}{0, 1, 2, 3 - default is 1}
 }
 \value{
 a ggplot2 theme

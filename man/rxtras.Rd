@@ -2,8 +2,8 @@
 % Please edit documentation in R/rxtras.R
 \docType{package}
 \name{rxtras}
-\alias{rxtras}
 \alias{rxtras-package}
+\alias{rxtras}
 \title{rxtras package}
 \description{
 Extra functions and addins that you might find useful.

@@ -12,16 +12,16 @@ License: MIT + file LICENSE
 LazyData: TRUE
 BugReports: https://github.com/JokingHero/rxtras/issues
 URL: https://github.com/JokingHero/rxtras
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Encoding: UTF-8
 Depends:
     R (>= 4.1.0),
     methods,
     ggplot2
 Imports: 
-    htmltools
 Suggests: knitr,
     rmarkdown,
     testthat,
+    htmltools,
     IRanges
 VignetteBuilder: knitr
