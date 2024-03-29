@@ -17,8 +17,8 @@ ressurect_order <- c(
   38, 55, 50, 39, 1, 47, 43, 6, 30, 46, 4, 34, 27, 54, 60, 14, 22, 2, 8, 41, 16)
 resurrect <- resurrect[ressurect_order]
 
-pastel <- c("#666666", "#ffb17b", "#a4e4ff", "#c0ffa4", "#ffe8a3",
-            "#ffa6d5", "#ff7e7e", "#aea1ff", "#6dbaff", "#d09b83")
+pastel <- c("#92d9f7ff", "#ffa6d5ff", "#c0eeac", "#9e9e9eff", "#ffa4a4",
+  "#ffb17b", "#aea1ff", "#ffe8a3", "#d09b83", "#6dbaff")
 
 #https://davidmathlogic.com/colorblind
 # /#%23585858-%23FE6100-%23648FFF-%2323CC90-%23DC267F-%233844D4-%23FFB000-%23785EF0-%23FFE21C-%2341DDE6
