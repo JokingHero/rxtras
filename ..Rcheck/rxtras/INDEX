@@ -1,0 +1,25 @@
+as.pngpdf               Wrapper around gglplot2::ggsave with presets.
+clipboard               Copy an object in the clipboard
+cpaste                  Paste an object from the clipboard
+get_palette_from_theme
+                        Get Palette from Current Theme
+ggplot2_settings_on     Set options for ggplot2
+plotRanges              Plot genomic ranges from the IRanges object or
+                        GRanges object.
+rxtras                  rxtras package
+scale_colour_science    Science Color Scale for Discrete Data
+scale_colour_science_div
+                        Science Diverging Color Scale (3-color)
+scale_colour_science_seq
+                        Science Sequential Color Scale (2-color)
+scale_fill_science      Science Fill Scale for Discrete Data
+scale_fill_science_div
+                        Science Diverging Fill Scale (3-color)
+scale_fill_science_seq
+                        Science Sequential Fill Scale (2-color)
+scale_gradient          Scale gradient for ggplot2
+science_palette         Get Science Palette Colors
+substrRight             Extract substrings in a character vector
+                        counting from right.
+theme_science           Set theme for ggplot2
+validate_palette        Validate Palette Parameter

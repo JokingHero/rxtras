@@ -26,6 +26,65 @@ adj_colorblind_mine <- c("#585858", "#FE6100", "#648FFF", "#23CC90", "#DC267F", 
                          "#785EF0", "#FFE21C", "#41DDE6")
 color_scheme <- list(adj_colorblind_mine, resurrect)
 
+science_gradient_colors <- list(
+  adj_colorblind = list(
+    low = "#DC267F",
+    mid = "white",
+    high = "#648FFF"
+  ),
+  pastel = list(
+    low = "#ffa6d5ff",
+    mid = "white",
+    high = "#92d9f7ff"
+  ),
+  resurrect = list(
+    low = "#d5695d",
+    mid = "white",
+    high = "#016392"
+  )
+)
+
+#' @title Get Science Palette Colors
+#'
+#' @description Returns colors from the science palettes. The function
+#' respects the palette setting from the current theme if no palette is
+#' specified.
+#'
+#' @param n Number of colors to return
+#' @param palette Palette name: "adj_colorblind" (default), "pastel", or "resurrect"
+#' @return Character vector of hex color codes
+#' @export
+#'
+science_palette <- function(n, palette = NULL) {
+  if (is.null(palette)) {
+    current_theme <- ggplot2::theme_get()
+    if (!is.null(current_theme$.palette)) {
+      palette <- current_theme$.palette
+    } else {
+      palette <- "adj_colorblind"
+    }
+  }
+
+  valid_palettes <- c("adj_colorblind", "pastel", "resurrect")
+  if (!palette %in% valid_palettes) {
+    stop(paste0("Invalid palette: '", palette, "'. ",
+                "Valid options: ", paste(valid_palettes, collapse = ", ")),
+         call. = FALSE)
+  }
+
+  colors <- switch(palette,
+    adj_colorblind = adj_colorblind_mine,
+    pastel = pastel,
+    resurrect = resurrect
+  )
+
+  if (n > length(colors)) {
+    colors <- resurrect
+  }
+
+  colors[seq_len(n)]
+}
+
 
 # library(ggplot2)
 # options(ggplot2.discrete.fill = color_scheme)

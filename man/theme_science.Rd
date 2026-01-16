@@ -17,7 +17,8 @@ theme_science(
   bc = "white",
   pc = "transparent",
   lp = "top",
-  axis = 1
+  axis = 1,
+  palette = "adj_colorblind"
 )
 }
 \arguments{
@@ -46,6 +47,8 @@ theme_science(
 \item{lp}{legend position, default is top}
 
 \item{axis}{0, 1, 2, 3 - default is 1}
+
+\item{palette}{Palette name: "adj_colorblind" (default), "pastel", or "resurrect"}
 }
 \value{
 a ggplot2 theme
@@ -54,6 +57,9 @@ a ggplot2 theme
 The theme set supports 10 colors in the colorblind friendly, yet
 beautiful pastille colors, and afterwards it backs out to 64 colors from
 resurrect palette. Theme is based on `ggthemes::theme_pander()`.
+Use `scale_colour_science()` and related scale functions to apply colors.
+Continuous scales can use `scale_colour_science_div()` and `scale_colour_science_seq()`
+for palette-specific gradients.
 }
 \author{
 See ggtheme package

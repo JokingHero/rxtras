@@ -3,6 +3,9 @@
 #' @description The theme set supports 10 colors in the colorblind friendly, yet
 #' beautiful pastille colors, and afterwards it backs out to 64 colors from
 #' resurrect palette. Theme is based on `ggthemes::theme_pander()`.
+#' Use `scale_colour_science()` and related scale functions to apply colors.
+#' Continuous scales can use `scale_colour_science_div()` and `scale_colour_science_seq()`
+#' for palette-specific gradients.
 #'
 #' @param base_size Font size
 #' @param base_family Font family
@@ -17,6 +20,7 @@
 #' @param pc panel colour background, default transparent
 #' @param lp legend position, default is top
 #' @param axis 0, 1, 2, 3 - default is 1
+#' @param palette Palette name: "adj_colorblind" (default), "pastel", or "resurrect"
 #' @return a ggplot2 theme
 #' @author See ggtheme package
 #' @export
@@ -34,7 +38,15 @@ theme_science <- function(
     bc = "white",
     pc = "transparent",
     lp = "top",
-    axis = 1) {
+    axis = 1,
+    palette = "adj_colorblind") {
+
+  valid_palettes <- c("adj_colorblind", "pastel", "resurrect")
+  if (!palette %in% valid_palettes) {
+    stop(paste0("Invalid palette: '", palette, "'. ",
+                "Valid options: ", paste(valid_palettes, collapse = ", ")),
+         call. = FALSE)
+  }
 
   tc <- ifelse(pc == "transparent", bc, pc)  # 'transparent' color
 
@@ -59,8 +71,8 @@ theme_science <- function(
                                            face = "italic",
                                            size = base_size),
                axis.title.x = element_text(colour = fc,
-                                           face = "plain",
-                                           size = base_size),
+                                          face = "plain",
+                                          size = base_size),
                strip.text.x = element_text(colour = fc,
                                            face = "plain",
                                            size = base_size),
@@ -79,7 +91,8 @@ theme_science <- function(
                                                fill = "transparent"),
                panel.border = element_rect(fill = NA, colour = gc),
                panel.background = element_rect(fill = pc, colour = gc),
-               legend.position = lp)
+               legend.position = lp,
+               .palette = palette)
 
   ## disable box(es) around the plot
   if (!boxes) {
