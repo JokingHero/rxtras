@@ -7,5 +7,5 @@
 ggplot2_settings_on()
 }
 \description{
-Set theme to theme science and colors and fill.
+Set default ggplot2 theme to theme_science and default discrete scales to science palettes.
 }

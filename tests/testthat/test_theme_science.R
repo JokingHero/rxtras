@@ -51,7 +51,7 @@ test_that("science_palette returns correct colors for resurrect", {
 test_that("science_palette reads from theme when palette = NULL", {
   old_theme <- ggplot2::theme_get()
   on.exit(ggplot2::theme_set(old_theme))
-  
+
   ggplot2::theme_set(theme_science(palette = "pastel"))
   colors <- science_palette(2)
   expect_equal(colors, pastel[1:2])
@@ -74,7 +74,7 @@ test_that("validate_palette throws error with valid options", {
     validate_palette("invalid"),
     "Invalid palette: 'invalid'. Valid options: adj_colorblind, pastel, resurrect"
   )
-  
+
   expect_equal(validate_palette("adj_colorblind"), "adj_colorblind")
   expect_equal(validate_palette("pastel"), "pastel")
   expect_equal(validate_palette("resurrect"), "resurrect")
@@ -83,7 +83,7 @@ test_that("validate_palette throws error with valid options", {
 test_that("get_palette_from_theme returns correct palette from theme", {
   old_theme <- ggplot2::theme_get()
   on.exit(ggplot2::theme_set(old_theme))
-  
+
   ggplot2::theme_set(theme_science(palette = "resurrect"))
   expect_equal(get_palette_from_theme(), "resurrect")
 })
@@ -91,7 +91,7 @@ test_that("get_palette_from_theme returns correct palette from theme", {
 test_that("get_palette_from_theme returns adj_colorblind as fallback", {
   old_theme <- ggplot2::theme_get()
   on.exit(ggplot2::theme_set(old_theme))
-  
+
   ggplot2::theme_set(ggplot2::theme_grey())
   expect_equal(get_palette_from_theme(), "adj_colorblind")
 })
@@ -99,12 +99,12 @@ test_that("get_palette_from_theme returns adj_colorblind as fallback", {
 test_that("discrete scales use theme palette by default", {
   old_theme <- ggplot2::theme_get()
   on.exit(ggplot2::theme_set(old_theme))
-  
+
   ggplot2::theme_set(theme_science(palette = "pastel"))
-  
+
   scale <- scale_colour_science()
   expect_silent(scale)
-  
+
   scale <- scale_fill_science()
   expect_silent(scale)
 })
@@ -112,7 +112,7 @@ test_that("discrete scales use theme palette by default", {
 test_that("discrete scales can override palette explicitly", {
   scale <- scale_colour_science(palette = "resurrect")
   expect_silent(scale)
-  
+
   scale <- scale_fill_science(palette = "pastel")
   expect_silent(scale)
 })
@@ -122,7 +122,7 @@ test_that("discrete scales validate palette parameter", {
     scale_colour_science(palette = "invalid"),
     "Invalid palette"
   )
-  
+
   expect_error(
     scale_fill_science(palette = "invalid"),
     "Invalid palette"
@@ -132,12 +132,12 @@ test_that("discrete scales validate palette parameter", {
 test_that("continuous scales use correct gradient colors for adj_colorblind", {
   old_theme <- ggplot2::theme_get()
   on.exit(ggplot2::theme_set(old_theme))
-  
+
   ggplot2::theme_set(theme_science(palette = "adj_colorblind"))
-  
+
   scale <- scale_colour_science_div()
   expect_silent(scale)
-  
+
   scale <- scale_fill_science_seq()
   expect_silent(scale)
 })
@@ -145,12 +145,12 @@ test_that("continuous scales use correct gradient colors for adj_colorblind", {
 test_that("continuous scales use correct gradient colors for pastel", {
   old_theme <- ggplot2::theme_get()
   on.exit(ggplot2::theme_set(old_theme))
-  
+
   ggplot2::theme_set(theme_science(palette = "pastel"))
-  
+
   scale <- scale_colour_science_div()
   expect_silent(scale)
-  
+
   scale <- scale_fill_science_seq()
   expect_silent(scale)
 })
@@ -158,12 +158,12 @@ test_that("continuous scales use correct gradient colors for pastel", {
 test_that("continuous scales use correct gradient colors for resurrect", {
   old_theme <- ggplot2::theme_get()
   on.exit(ggplot2::theme_set(old_theme))
-  
+
   ggplot2::theme_set(theme_science(palette = "resurrect"))
-  
+
   scale <- scale_colour_science_div()
   expect_silent(scale)
-  
+
   scale <- scale_fill_science_seq()
   expect_silent(scale)
 })
@@ -171,7 +171,7 @@ test_that("continuous scales use correct gradient colors for resurrect", {
 test_that("continuous scales can override palette explicitly", {
   scale <- scale_colour_science_div(palette = "pastel")
   expect_silent(scale)
-  
+
   scale <- scale_fill_science_seq(palette = "resurrect")
   expect_silent(scale)
 })
@@ -181,7 +181,7 @@ test_that("continuous scales validate palette parameter", {
     scale_colour_science_div(palette = "invalid"),
     "Invalid palette"
   )
-  
+
   expect_error(
     scale_fill_science_seq(palette = "invalid"),
     "Invalid palette"
@@ -207,11 +207,11 @@ test_that("plots with theme_science use correct palette", {
   skip_if_not_installed("ggplot2")
   old_theme <- ggplot2::theme_get()
   on.exit(ggplot2::theme_set(old_theme))
-  
+
   p <- ggplot2::ggplot(mtcars, ggplot2::aes(x = mpg, y = wt, colour = factor(cyl))) +
     ggplot2::geom_point() +
     theme_science(palette = "pastel")
-  
+
   expect_warning(ggplot2::ggplot_build(p), ".palette")
 })
 
@@ -219,25 +219,26 @@ test_that("plots with theme_science use correct palette with scale functions", {
   skip_if_not_installed("ggplot2")
   old_theme <- ggplot2::theme_get()
   on.exit(ggplot2::theme_set(old_theme))
-  
+
   p <- ggplot2::ggplot(mtcars, ggplot2::aes(x = mpg, y = wt, colour = factor(cyl))) +
     ggplot2::geom_point() +
     scale_colour_science() +
     theme_science(palette = "pastel")
-  
+
   expect_warning(ggplot2::ggplot_build(p), ".palette")
 })
 
 test_that("scale_colour_science_div creates a valid diverging scale", {
   skip_if_not_installed("ggplot2")
-  
+
   scale <- scale_colour_science_div()
   expect_s3_class(scale, "ScaleContinuous")
 })
 
 test_that("scale_colour_science_seq creates a valid sequential scale", {
   skip_if_not_installed("ggplot2")
-  
+
   scale <- scale_colour_science_seq()
   expect_s3_class(scale, "ScaleContinuous")
 })
+

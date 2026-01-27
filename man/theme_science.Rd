@@ -2,11 +2,12 @@
 % Please edit documentation in R/ggplot_theme.R
 \name{theme_science}
 \alias{theme_science}
-\title{Set theme for ggplot2}
+\title{Set theme for ggplot2 (Science Style)}
 \usage{
 theme_science(
-  base_size = 16,
+  base_size = 12,
   base_family = "sans",
+  palette = "adj_colorblind",
   nomargin = FALSE,
   fc = "black",
   gM = TRUE,
@@ -17,14 +18,15 @@ theme_science(
   bc = "white",
   pc = "transparent",
   lp = "top",
-  axis = 1,
-  palette = "adj_colorblind"
+  axis = 1
 )
 }
 \arguments{
-\item{base_size}{Font size}
+\item{base_size}{base font size, given in pts.}
 
-\item{base_family}{Font family}
+\item{base_family}{base font family}
+
+\item{palette}{Science palette to use ("adj_colorblind", "pastel", "resurrect")}
 
 \item{nomargin}{If true will remove all margins.}
 
@@ -47,20 +49,7 @@ theme_science(
 \item{lp}{legend position, default is top}
 
 \item{axis}{0, 1, 2, 3 - default is 1}
-
-\item{palette}{Palette name: "adj_colorblind" (default), "pastel", or "resurrect"}
-}
-\value{
-a ggplot2 theme
 }
 \description{
-The theme set supports 10 colors in the colorblind friendly, yet
-beautiful pastille colors, and afterwards it backs out to 64 colors from
-resurrect palette. Theme is based on `ggthemes::theme_pander()`.
-Use `scale_colour_science()` and related scale functions to apply colors.
-Continuous scales can use `scale_colour_science_div()` and `scale_colour_science_seq()`
-for palette-specific gradients.
-}
-\author{
-See ggtheme package
+Set theme for ggplot2 (Science Style)
 }

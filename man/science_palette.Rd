@@ -2,20 +2,18 @@
 % Please edit documentation in R/color_pallette.R
 \name{science_palette}
 \alias{science_palette}
-\title{Get Science Palette Colors}
+\title{Science Palette Generator}
 \usage{
 science_palette(n, palette = NULL)
 }
 \arguments{
-\item{n}{Number of colors to return}
+\item{n}{Number of colors to return.}
 
-\item{palette}{Palette name: "adj_colorblind" (default), "pastel", or "resurrect"}
+\item{palette}{Name of the palette ("adj_colorblind", "pastel", "resurrect").}
 }
 \value{
-Character vector of hex color codes
+A character vector of hex colors.
 }
 \description{
-Returns colors from the science palettes. The function
-respects the palette setting from the current theme if no palette is
-specified.
+Returns a vector of colors for a given palette name and number of colors.
 }
