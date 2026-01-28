@@ -6,11 +6,11 @@
 \alias{scale_fill_science_div}
 \title{Science Diverging Color Scale}
 \usage{
-scale_colour_science_div(palette = NULL, ...)
+scale_colour_science_div(palette = "adj_colorblind", ...)
 
-scale_color_science_div(palette = NULL, ...)
+scale_color_science_div(palette = "adj_colorblind", ...)
 
-scale_fill_science_div(palette = NULL, ...)
+scale_fill_science_div(palette = "adj_colorblind", ...)
 }
 \arguments{
 \item{palette}{Name of the palette.}

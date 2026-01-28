@@ -60,24 +60,10 @@ science_gradients <- science_gradient_colors
 validate_palette <- function(palette) {
   valid <- names(science_colors)
   if (!palette %in% valid) {
-    stop(sprintf("Invalid palette: '%s'. Valid options: %s", 
+    stop(sprintf("Invalid palette: '%s'. Valid options: %s",
                  palette, paste(valid, collapse = ", ")))
   }
   palette
-}
-
-#' Get palette from current theme
-#' @description
-#' Attempts to retrieve the .palette element from the current ggplot2 theme.
-#' Defaults to "adj_colorblind" if not found.
-#' @return A character string naming the palette.
-#' @export
-get_palette_from_theme <- function() {
-  theme <- ggplot2::theme_get()
-  if (!is.null(theme$.palette)) {
-    return(theme$.palette)
-  }
-  "adj_colorblind"
 }
 
 #' Science Palette Generator
@@ -88,15 +74,12 @@ get_palette_from_theme <- function() {
 #' @return A character vector of hex colors.
 #' @export
 science_palette <- function(n, palette = NULL) {
-  if (is.null(palette)) {
-    palette <- get_palette_from_theme()
-  }
   validate_palette(palette)
-  
+
   if (n > 10 && palette != "resurrect") {
     palette <- "resurrect"
   }
-  
+
   cols <- science_colors[[palette]]
   if (n > length(cols)) {
     return(rep(cols, length.out = n))

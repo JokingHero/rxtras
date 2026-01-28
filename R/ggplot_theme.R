@@ -1,7 +1,6 @@
 #' Set theme for ggplot2 (Science Style)
 #'
 #' @inheritParams ggplot2::theme_bw
-#' @param palette Science palette to use ("adj_colorblind", "pastel", "resurrect")
 #' @param nomargin If true will remove all margins.
 #' @param fc text colour, default is black
 #' @param gM grid Major
@@ -17,7 +16,6 @@
 theme_science <- function(
     base_size = 12,
     base_family = "sans",
-    palette = "adj_colorblind",
     nomargin = FALSE,
     fc = "black",
     gM = TRUE,
@@ -30,7 +28,6 @@ theme_science <- function(
     lp = "top",
     axis = 1) {
 
-  validate_palette(palette)
   tc <- ifelse(pc == "transparent", bc, pc)
 
   # Base theme
@@ -88,9 +85,16 @@ theme_science <- function(
       axis.text.x = ggplot2::element_text(angle = 90, hjust = 1)
     )
   }
-
-  # Store palette in theme for scales to pick up
-  res$.palette <- palette
-  
   res
+}
+
+#' Set theme for ggplot2 (Science Style)
+#'
+#' @param palette Science palette to use ("adj_colorblind", "pastel", "resurrect")
+#' @param ... Additional arguments passed to theme_science()
+#' @export
+#'
+theme_science_pallete <- function(palette = "adj_colorblind", ...) {
+  validate_palette(palette)
+  list(theme_science(...), scale_color_science(palette), scale_fill_science(palette))
 }

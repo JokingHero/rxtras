@@ -7,7 +7,6 @@
 theme_science(
   base_size = 12,
   base_family = "sans",
-  palette = "adj_colorblind",
   nomargin = FALSE,
   fc = "black",
   gM = TRUE,
@@ -25,8 +24,6 @@ theme_science(
 \item{base_size}{base font size, given in pts.}
 
 \item{base_family}{base font family}
-
-\item{palette}{Science palette to use ("adj_colorblind", "pastel", "resurrect")}
 
 \item{nomargin}{If true will remove all margins.}
 

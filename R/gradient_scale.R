@@ -48,7 +48,7 @@ scale_gradient <- function(
 #                color = Petal.Width)) +
 #   geom_point(size = 5) +
 #   scale_gradient(-3, max(dt$Petal.Width), aesthetics = "color")
-
+#
 # ggplot(dt, aes(x = Sepal.Length,
 #                y = Sepal.Width,
 #                color = Petal.Width)) +

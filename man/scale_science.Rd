@@ -6,11 +6,11 @@
 \alias{scale_fill_science}
 \title{Science Discrete Color Scales}
 \usage{
-scale_colour_science(palette = NULL, ...)
+scale_colour_science(palette = "adj_colorblind", ...)
 
-scale_color_science(palette = NULL, ...)
+scale_color_science(palette = "adj_colorblind", ...)
 
-scale_fill_science(palette = NULL, ...)
+scale_fill_science(palette = "adj_colorblind", ...)
 }
 \arguments{
 \item{palette}{Name of the palette. If NULL, uses the palette from the current theme.}

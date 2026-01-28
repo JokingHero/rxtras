@@ -10,6 +10,7 @@
 
 .onAttach <- function(libname, pkgname) {
   packageStartupMessage("rxtras attached. Use ggplot2_settings_off() to disable theme and scales.")
+  ggplot2_settings_on()
 }
 
 
@@ -20,15 +21,10 @@
 #'
 ggplot2_settings_on <- function() {
   ggplot2::theme_set(theme_science())
-
-  # Set default discrete scales
   options(ggplot2.discrete.colour = scale_colour_science)
   options(ggplot2.discrete.fill = scale_fill_science)
-
-  # Set default continuous scales
   options(ggplot2.continuous.colour = scale_colour_science_div)
   options(ggplot2.continuous.fill = scale_fill_science_div)
-
   return(invisible())
 }
 
