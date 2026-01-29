@@ -9,7 +9,7 @@
 "_PACKAGE"
 
 .onAttach <- function(libname, pkgname) {
-  packageStartupMessage("rxtras attached. Use ggplot2_settings_off() to disable theme and scales.")
+  packageStartupMessage("rxtras attached. Use ggplot2_settings_off() to disable theme and scales. Use theme_science() and theme_science_palette().")
   ggplot2_settings_on()
 }
 

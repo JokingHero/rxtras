@@ -1,14 +1,14 @@
 context("Theme Science")
 
 test_that("theme_science_palette accepts valid palette options", {
-  expect_silent(theme_science_pallete(palette = "adj_colorblind"))
-  expect_silent(theme_science_pallete(palette = "pastel"))
-  expect_silent(theme_science_pallete(palette = "resurrect"))
+  expect_silent(theme_science_palette(palette = "adj_colorblind"))
+  expect_silent(theme_science_palette(palette = "pastel"))
+  expect_silent(theme_science_palette(palette = "resurrect"))
 })
 
 test_that("theme_science_palette throws error with valid options message for invalid palette", {
   expect_error(
-    theme_science_pallete(palette = "invalid"),
+    theme_science_palette(palette = "invalid"),
     "Invalid palette: 'invalid'. Valid options: adj_colorblind, pastel, resurrect"
   )
 })

@@ -94,7 +94,7 @@ theme_science <- function(
 #' @param ... Additional arguments passed to theme_science()
 #' @export
 #'
-theme_science_pallete <- function(palette = "adj_colorblind", ...) {
+theme_science_palette <- function(palette = "adj_colorblind", ...) {
   validate_palette(palette)
   list(theme_science(...), scale_color_science(palette), scale_fill_science(palette))
 }
